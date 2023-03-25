@@ -19,7 +19,7 @@ describe('generator:app', () => {
         authorEmail: 'hi@yeoman.io',
         authorUrl: 'http://yeoman.io',
         keywords: [],
-        license: 'MIT'
+        license: 'MIT',
       });
     });
 
@@ -34,7 +34,7 @@ describe('generator:app', () => {
         'package.json',
         'generators/app/index.js',
         'generators/app/templates/dummyfile.txt',
-        '__tests__/app.js'
+        '__tests__/app.js',
       ];
 
       assert.file(expected);
@@ -47,13 +47,13 @@ describe('generator:app', () => {
         dependencies: {
           'yeoman-generator': generatorGeneratorPkg.dependencies['yeoman-generator'],
           chalk: generatorGeneratorPkg.dependencies.chalk,
-          yosay: generatorGeneratorPkg.dependencies.yosay
+          yosay: generatorGeneratorPkg.dependencies.yosay,
         },
         devDependencies: {
           'yeoman-test': generatorGeneratorPkg.devDependencies['yeoman-test'],
-          'yeoman-assert': generatorGeneratorPkg.devDependencies['yeoman-assert']
+          'yeoman-assert': generatorGeneratorPkg.devDependencies['yeoman-assert'],
         },
-        keywords: ['yeoman-generator']
+        keywords: ['yeoman-generator'],
       });
     });
 
@@ -81,7 +81,7 @@ describe('generator:app', () => {
         authorEmail: 'hi@yeoman.io',
         authorUrl: 'http://yeoman.io',
         keywords: [],
-        license: 'MIT'
+        license: 'MIT',
       });
     });
 
@@ -92,7 +92,7 @@ describe('generator:app', () => {
     it('fills package.json with correct information', () => {
       // eslint-disable-next-line new-cap
       assert.JSONFileContent('package.json', {
-        name: '@yeoman/generator-temp'
+        name: '@yeoman/generator-temp',
       });
     });
 

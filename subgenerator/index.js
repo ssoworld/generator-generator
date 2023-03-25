@@ -10,7 +10,7 @@ module.exports = class extends Generator {
     this.argument('name', {
       type: String,
       required: true,
-      description: 'Generator name'
+      description: 'Generator name',
     });
   }
 
@@ -23,7 +23,7 @@ module.exports = class extends Generator {
       {
         // Escape apostrophes from superb to not conflict with JS strings
         superb: superb.random().replace("'", "\\'"),
-        generatorName
+        generatorName,
       }
     );
 
@@ -37,7 +37,7 @@ module.exports = class extends Generator {
       this.destinationPath('__tests__/' + this.options.name + '.js'),
       {
         name: this.options.name,
-        generatorName
+        generatorName,
       }
     );
   }

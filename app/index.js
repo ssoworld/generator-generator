@@ -9,7 +9,7 @@ function parseScopedName(name) {
   const nameFragments = name.split('/');
   const parseResult = {
     scopeName: '',
-    localName: name
+    localName: name,
   };
 
   if (nameFragments.length > 1) {
@@ -40,12 +40,12 @@ module.exports = class extends Generator {
         message: 'Your generator name',
         default: makeGeneratorName(path.basename(process.cwd())),
         filter: makeGeneratorName,
-        validate: str => {
+        validate: (str) => {
           return str.length > 'generator-'.length;
-        }
+        },
       },
       this
-    ).then(props => {
+    ).then((props) => {
       this.props.name = props.name;
       Object.assign(this.props, parseScopedName(props.name));
     });
@@ -69,12 +69,12 @@ module.exports = class extends Generator {
       skipInstall: this.options.skipInstall,
       readme: readmeTpl({
         generatorName: this.props.name,
-        yoName: this.props.name.replace('generator-', '')
-      })
+        yoName: this.props.name.replace('generator-', ''),
+      }),
     });
 
     this.composeWith(require.resolve('../subgenerator'), {
-      arguments: ['app']
+      arguments: ['app'],
     });
   }
 
@@ -86,15 +86,15 @@ module.exports = class extends Generator {
       dependencies: {
         'yeoman-generator': generatorGeneratorPkg.dependencies['yeoman-generator'],
         chalk: generatorGeneratorPkg.dependencies.chalk,
-        yosay: generatorGeneratorPkg.dependencies.yosay
+        yosay: generatorGeneratorPkg.dependencies.yosay,
       },
       devDependencies: {
         'yeoman-test': generatorGeneratorPkg.devDependencies['yeoman-test'],
-        'yeoman-assert': generatorGeneratorPkg.devDependencies['yeoman-assert']
+        'yeoman-assert': generatorGeneratorPkg.devDependencies['yeoman-assert'],
       },
       jest: {
-        testPathIgnorePatterns: ['templates']
-      }
+        testPathIgnorePatterns: ['templates'],
+      },
     });
     pkg.keywords = pkg.keywords || [];
     pkg.keywords.push('yeoman-generator');

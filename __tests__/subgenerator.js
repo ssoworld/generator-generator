@@ -12,9 +12,9 @@ describe('generator:subgenerator', () => {
       .run(path.join(__dirname, '../subgenerator'))
       .withArguments(['foo'])
       .withOptions({
-        force: true
+        force: true,
       })
-      .inTmpDir(tmpDir => {
+      .inTmpDir((tmpDir) => {
         fs.writeFileSync(
           path.join(tmpDir, 'package.json'),
           '{"name": "generator-foo", "files":[]}'
@@ -26,7 +26,7 @@ describe('generator:subgenerator', () => {
     assert.file([
       'generators/foo/index.js',
       'generators/foo/templates/dummyfile.txt',
-      '__tests__/foo.js'
+      '__tests__/foo.js',
     ]);
   });
 

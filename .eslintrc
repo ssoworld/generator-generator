@@ -1,11 +1,15 @@
 {
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+
   "extends": [
-    "xo-space/esnext",
     "prettier"
   ],
   "env": {
     "jest": true,
-    "node": true
+    "node": true,
+    "es6": true
   },
   "rules": {
     "prettier/prettier": [
