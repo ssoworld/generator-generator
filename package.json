@@ -28,7 +28,7 @@
   "dependencies": {
     "chalk": "5.2.0",
     "deep-extend": "^0.6.0",
-    "generator-node": "^2.3.0",
+    "generator-node": "2.8.0",
     "inquirer-npm-name": "^4.0.0",
     "lint-staged": "13.2.0",
     "lodash": "^4.17.4",

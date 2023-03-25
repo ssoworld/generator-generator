@@ -40,12 +40,12 @@ module.exports = class extends Generator {
         message: 'Your generator name',
         default: makeGeneratorName(path.basename(process.cwd())),
         filter: makeGeneratorName,
-        validate: str => {
+        validate: (str) => {
           return str.length > 'generator-'.length
         },
       },
       this
-    ).then(props => {
+    ).then((props) => {
       this.props.name = props.name
       Object.assign(this.props, parseScopedName(props.name))
     })

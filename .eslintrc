@@ -1,4 +1,7 @@
 {
+  "extends": [
+    "eslint:recommended", "prettier"
+  ],
     "parserOptions": {
       "ecmaFeatures": {
         "jsx": true
@@ -7,9 +10,6 @@
       "ecmaVersion": "latest"
     },
 
-  "extends": [
-    "prettier"
-  ],
   "env": {
     "jest": true,
     "node": true,
