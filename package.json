@@ -49,28 +49,6 @@
     "yeoman-assert": "^3.1.1",
     "yeoman-test": "^1.7.0"
   },
-  "eslintConfig": {
-    "extends": [
-      "xo-space/esnext",
-      "prettier"
-    ],
-    "env": {
-      "jest": true,
-      "node": true
-    },
-    "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "singleQuote": true,
-          "printWidth": 90
-        }
-      ]
-    },
-    "plugins": [
-      "prettier"
-    ]
-  },
   "jest": {
     "testEnvironment": "node",
     "testPathIgnorePatterns": [
