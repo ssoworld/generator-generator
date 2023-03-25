@@ -1,21 +1,21 @@
-'use strict';
-const path = require('path');
-const Generator = require('yeoman-generator');
-const superb = require('superb');
+'use strict'
+const path = require('path')
+const Generator = require('yeoman-generator')
+const superb = require('superb')
 
 module.exports = class extends Generator {
   constructor(args, opts) {
-    super(args, opts);
+    super(args, opts)
 
     this.argument('name', {
       type: String,
       required: true,
       description: 'Generator name',
-    });
+    })
   }
 
   writing() {
-    const generatorName = this.fs.readJSON(this.destinationPath('package.json')).name;
+    const generatorName = this.fs.readJSON(this.destinationPath('package.json')).name
 
     this.fs.copyTpl(
       this.templatePath('index.js'),
@@ -25,12 +25,12 @@ module.exports = class extends Generator {
         superb: superb.random().replace("'", "\\'"),
         generatorName,
       }
-    );
+    )
 
     this.fs.copy(
       this.templatePath('templates/**'),
       this.destinationPath(path.join('generators', this.options.name, 'templates'))
-    );
+    )
 
     this.fs.copyTpl(
       this.templatePath('test.js'),
@@ -39,6 +39,6 @@ module.exports = class extends Generator {
         name: this.options.name,
         generatorName,
       }
-    );
+    )
   }
-};
+}
